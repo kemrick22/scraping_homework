@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hot Finds</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+      
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Scrape Mars!</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Pull in Mars Data</a></p>
+    </div>
+</div>
+      
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bold">
+            <h1>Latest Mars News</h1>
+            <h3>{{scrape_dict.nasa_news[0]}}</h2>
+            <p>{{scrape_dict.nasa_news[1]}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class=bold>Featured Mars Image</h1>
+            <a><img src={{scrape_dict.jpl_image}}></img></a>
+        </div>
+        <div class="col-md-4">
+            <h3 class="bold"> Current Weather on Mars</h3>
+            <p>{{scrape_dict.mars_weather}}</p>
+        </div>
+        <div class="col-md-4 bold">
+            <h3 class=bold>Mars Facts</h3>
+            {{scrape_dict.mars_table|safe}}
+        </div>
+    </div>
+
+<!-- HTML will not diplay tif files, so just linking instead -->
+    <div class="row">
+        <div class="col-md-8 bold">
+            <h1>Visit These URLs for Hemisphere Images</h1>
+            <h3>{{scrape_dict.hemisphere_titles[0]}}</h3>
+            <p>{{scrape_dict.hemisphere_images[0]}}</p>
+            <h3>{{scrape_dict.hemisphere_titles[1]}}</h3>
+            <p>{{scrape_dict.hemisphere_images[1]}}</p>
+            <h3>{{scrape_dict.hemisphere_titles[2]}}</h3>
+            <p>{{scrape_dict.hemisphere_images[2]}}</p>
+            <h3>{{scrape_dict.hemisphere_titles[3]}}</h3>
+            <p>{{scrape_dict.hemisphere_images[3]}}</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
